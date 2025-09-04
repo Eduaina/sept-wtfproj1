@@ -21,5 +21,8 @@ console.log(multiply);
 const divide = num1 / num2;
 console.log(divide);
 
+//Template LiterL
+ console.log(`Hello ${name}, the result of num1 + num2 is ${result}`);
 
- console.log(`Hello ${name}, the result of num1 + num2 is ${result}`)
+// string concatenation
+console.log("Hello " + name + ", the result of num1 + num2 is " + result);
