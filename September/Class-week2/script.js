@@ -37,22 +37,24 @@
 
 
 
-const monthlyIncome = 2000;
-console.log("Monthly Income is: " + monthlyIncome);
+const monthlyIncome = Number(prompt("What is your expected income for the month?"));
 
 let dailyExpense = monthlyIncome * 0.01;
-console.log("Daily Expense is: " + dailyExpense);
 
 let monthlyExpense = dailyExpense * 30;
-console.log( "Monthly Expense is: " + monthlyExpense);
 
 let savings = monthlyIncome - monthlyExpense;
-console.log("Savings is: "+ savings);
 
 let spending = monthlyExpense;
-console.log("Spending is: " + spending);
-
 
 // Final result
 const finalResult = spending;
+
+
+
+console.log("Monthly Income is: " + monthlyIncome);
+console.log("Daily Expense is: " + dailyExpense);
+console.log("Monthly Expense is: " + monthlyExpense);
+console.log("Savings is: "+ savings);
+console.log("Spending is: " + spending);
 console.log("The Final Result is: " + finalResult);
