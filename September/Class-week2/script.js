@@ -38,17 +38,21 @@
 
 
 const monthlyIncome = 2000;
-console.log(monthlyIncome);
+console.log("Monthly Income is: " + monthlyIncome);
 
 let dailyExpense = monthlyIncome * 0.01;
-console.log(dailyExpense);
+console.log("Daily Expense is: " + dailyExpense);
 
 let monthlyExpense = dailyExpense * 30;
-console.log(monthlyExpense);
+console.log( "Monthly Expense is: " + monthlyExpense);
 
 let savings = monthlyIncome - monthlyExpense;
-console.log(savings);
+console.log("Savings is: "+ savings);
 
-//Remainder
-let spendings = monthlyExpense;
-console.log(spendings);
+let spending = monthlyExpense;
+console.log("Spending is: " + spending);
+
+
+// Final result
+const finalResult = spending;
+console.log("The Final Result is: " + finalResult);
