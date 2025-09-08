@@ -6,8 +6,8 @@ const name = 'Eduaina Ighalo';
 
 
 //Addition
-const result = num1 + num2
-console.log(result);
+const add = num1 + num2
+console.log(add);
 
 //Subtraction
 const subtract = num1 - num2;
@@ -20,6 +20,9 @@ console.log(multiply);
 //Division
 const divide = num1 / num2;
 console.log(divide);
+
+const result = add
+console.log(result);
 
 //Template LiterL
  console.log(`Hello ${name}, the result of num1 + num2 is ${result}`);
