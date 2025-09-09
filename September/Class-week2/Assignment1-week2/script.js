@@ -81,6 +81,32 @@ if (account2.currency == account3.currency) {
     console.log("Transfer failed: currency mismatch");
 }
 
+
+// Bonus:
+console.log("--- Bonus Conversion ---");
+const account5 = { 
+    name: "Bonus Foreign", 
+    balance: 1000, 
+    currency: "EUR", 
+    type: "Checking" };
+const exchangeRate = 1.1; 
+const euroTransfer = 100;
+
+if (account5.balance >= euroTransfer) {
+    if (account5.currency === "EUR" && account1.currency === "USD") {
+        account5.balance -= euroTransfer;
+        let converted = euroTransfer * exchangeRate;
+        account1.balance += converted;
+        console.log(account5.name + " transferred " + euroTransfer + " EUR (" + converted.toFixed(2) + " USD) to " + account1.name);
+    } else {
+        console.log("Transfer failed: currency mismatch");
+    }
+} else {
+    console.log("Transfer failed: insufficient funds");
+}
+
+
+
 // 4. Monthly maintenance , adding to savings and removing from checking accounts.
 if (account1.type == "Savings") {
 const interest = account1.balance * 0.02;
@@ -207,3 +233,11 @@ if (account4.balance > 0) {
 } else {
     console.log(account4.name + ": Overdrawn");
 }
+
+
+// 7. Final Summary (no loops)
+console.log(" Final Summary ---");
+console.log(account1.name + " | Balance: " + account1.balance.toFixed(2) + " " + account1.currency + " | Type: " + account1.type);
+console.log(account2.name + " | Balance: " + account2.balance.toFixed(2) + " " + account2.currency + " | Type: " + account2.type);
+console.log(account3.name + " | Balance: " + account3.balance.toFixed(2) + " " + account3.currency + " | Type: " + account3.type);
+console.log(account4.name + " | Balance: " + account4.balance.toFixed(2) + " " + account4.currency + " | Type: " + account4.type);
