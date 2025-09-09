@@ -81,8 +81,7 @@ if (account2.currency == account3.currency) {
     console.log("Transfer failed: currency mismatch");
 }
 
-// 4. Monthly maintenance
-
+// 4. Monthly maintenance , adding to savings and removing from checking accounts.
 if (account1.type == "Savings") {
 const interest = account1.balance * 0.02;
 const deductFee = 100;
@@ -121,4 +120,90 @@ console.log(account4.balance += interest)
 } else {
     console.log("Fee Deducted")
     console.log(account4.balance -= withdrawal)
+}
+
+// 5. Comparisons: the highest balance, the lowest balance.
+
+let highest = account1;
+let lowest = account1;
+
+// comparing account2
+if (account2.balance > highest.balance) {
+    highest = account2;
+} else {
+    highest = highest;
+}
+
+if (account2.balance < lowest.balance) {
+    lowest = account2;
+} else {
+    lowest = lowest;
+}
+
+// compare account3
+if (account3.balance > highest.balance) {
+    highest = account3;
+} else {
+    highest = highest;
+}
+
+if (account3.balance < lowest.balance) {
+    lowest = account3;
+} else {
+    lowest = lowest;
+}
+
+// compare account4
+if (account4.balance > highest.balance) {
+    highest = account4;
+} else {
+    highest = highest;
+}
+
+if (account4.balance < lowest.balance) {
+    lowest = account4;
+} else {
+    lowest = lowest;
+}
+
+console.log("Highest balance: " + highest.name + " with " + highest.balance.toFixed(2) + " " + highest.currency);
+console.log("Lowest balance: " + lowest.name + " with " + lowest.balance.toFixed(2) + " " + lowest.currency);
+
+// 6. Status check (no loops, only if...else)
+console.log("Account Status--");
+
+// Account 1
+if (account1.balance > 0) {
+    console.log(account1.name + ": Active");
+} else if (account1.balance === 0) {
+    console.log(account1.name + ": Empty");
+} else {
+    console.log(account1.name + ": Overdrawn");
+}
+
+// Account 2
+if (account2.balance > 0) {
+    console.log(account2.name + ": Active");
+} else if (account2.balance === 0) {
+    console.log(account2.name + ": Empty");
+} else {
+    console.log(account2.name + ": Overdrawn");
+}
+
+// Account 3
+if (account3.balance > 0) {
+    console.log(account3.name + ": Active");
+} else if (account3.balance === 0) {
+    console.log(account3.name + ": Empty");
+} else {
+    console.log(account3.name + ": Overdrawn");
+}
+
+// Account 4
+if (account4.balance > 0) {
+    console.log(account4.name + ": Active");
+} else if (account4.balance === 0) {
+    console.log(account4.name + ": Empty");
+} else {
+    console.log(account4.name + ": Overdrawn");
 }
