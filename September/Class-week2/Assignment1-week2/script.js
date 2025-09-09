@@ -61,7 +61,6 @@ if (account4.balance >= withdrawal) {
 }
 
 //3. Transfering money between two accounts if they have the same currency
-//If currencies are different, print: "Transfer failed: currency mismatch"
 if (account1.currency == account3.currency) {
     account1.balance -= firstDeposit
     account3.balance += firstDeposit
@@ -83,8 +82,7 @@ if (account2.currency == account3.currency) {
 }
 
 // 4. Monthly maintenance
-//If account type is "Savings", add interest (e.g., 2% of balance). 
-// If account type is "Checking", deduct fees (e.g., 50 units).
+
 if (account1.type == "Savings") {
 const interest = account1.balance * 0.02;
 const deductFee = 100;
