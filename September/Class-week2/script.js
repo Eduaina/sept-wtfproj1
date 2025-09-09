@@ -58,3 +58,12 @@ console.log("Monthly Expense is: " + monthlyExpense);
 console.log("Savings is: "+ savings);
 console.log("Spending is: " + spending);
 console.log("The Final Result is: " + finalResult);
+
+
+
+if (user3.currency == user1.currency) {
+    console.log(user1.currency += deposit);
+    console.log(user3.currency -= deposit);
+} else {
+    console.log("Transfer failed");
+}
