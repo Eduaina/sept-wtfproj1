@@ -96,7 +96,7 @@ if (account2.currency == account3.currency) {
 // Bonus:
 console.log("--Bonus Question Attempt--");
 
-const exchangeRate = 1.1; //Euro to USD
+const exchangeRate = 1.1; //Euro to USD assumption for now
 const transferAmount = 1000;
 
 if (account5.balance >= transferAmount) {
@@ -247,11 +247,8 @@ if (account4NGN < lowest.naira) {
         currency: account4.currency };
 }
 
-// Print results
 console.log("Highest balance: " + highest.name + " with " + highest.naira + " NGN");
 console.log("Lowest balance: " + lowest.name + " with " + lowest.naira + " NGN");
-
-
 
 
 
