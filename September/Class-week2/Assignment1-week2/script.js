@@ -27,6 +27,14 @@ const account4 = {
     type: "Savings"
 }
 
+//Bonous Account
+const account5 = { 
+    name: "Euro Girl", 
+    balance: 10000, 
+    currency: "EUR", 
+    type: "Checking" 
+};
+
 //1. Simulating deposits:
 const firstDeposit = 10000;
 const secondDeposit = 5000;
@@ -36,11 +44,13 @@ account2.balance += firstDeposit;
 account3.balance += secondDeposit;
 
 //Showing the new balances.
-console.log(account2.balance);
-console.log(account3.balance);
+console.log("--Adding Deposits--")
+console.log("New balance after adding a deposit to Account2 is: " + account2.balance);
+console.log("New balance after adding a deposit to Account3 is: " + account3.balance);
 
 
 //2. Simulating withdrawals
+console.log("--Simulating withdrawals--")
 const withdrawal = 30000;
 
 //Attempting withdrawals from two accounts.
@@ -61,12 +71,13 @@ if (account4.balance >= withdrawal) {
 }
 
 //3. Transfering money between two accounts if they have the same currency
+console.log("--Transfering money--")
 if (account1.currency == account3.currency) {
     account1.balance -= firstDeposit
     account3.balance += firstDeposit
     console.log("Transfer Successful");
-    console.log("Your balance is now: " + account1.balance);
-    console.log("Your balance is now: " + account3.balance);
+    console.log("Your balance is now: $" + account1.balance + " " + account1.name);
+    console.log("Your balance is now: $" + account3.balance + " " + account3.name);
 } else {
     console.log("Transfer failed: currency mismatch");
 }
@@ -75,29 +86,28 @@ if (account2.currency == account3.currency) {
     account2.balance -= firstDeposit
     account3.balance += firstDeposit
     console.log("Transfer Successful");
-    console.log("Your balance is now: " + account2.balance);
-    console.log("Your balance is now: " + account3.balance);
+    console.log("Your balance is now: " + account2.balance + " " + account2.name);
+    console.log("Your balance is now: " + account3.balance + " " + account3.name);
 } else {
     console.log("Transfer failed: currency mismatch");
 }
 
 
 // Bonus:
-console.log("--- Bonus Conversion ---");
-const account5 = { 
-    name: "Bonus Foreign", 
-    balance: 1000, 
-    currency: "EUR", 
-    type: "Checking" };
-const exchangeRate = 1.1; 
-const euroTransfer = 100;
+console.log("--Bonus Question Attempt--");
 
-if (account5.balance >= euroTransfer) {
+const exchangeRate = 1.1; //Euro to USD
+const transferAmount = 1000;
+
+if (account5.balance >= transferAmount) {
     if (account5.currency === "EUR" && account1.currency === "USD") {
-        account5.balance -= euroTransfer;
-        let converted = euroTransfer * exchangeRate;
-        account1.balance += converted;
-        console.log(account5.name + " transferred " + euroTransfer + " EUR (" + converted.toFixed(2) + " USD) to " + account1.name);
+        account5.balance -= transferAmount;
+        let convertedFee = transferAmount * exchangeRate;
+        account1.balance += convertedFee;
+        console.log(account5.name + " transferred " + transferAmount
+             + " EUR to " + account1.name);
+        console.log(account5.name + " your new account balance is: " + account5.balance);
+        console.log(account1.name + " your new account balance is: " + account1.balance);
     } else {
         console.log("Transfer failed: currency mismatch");
     }
@@ -105,98 +115,148 @@ if (account5.balance >= euroTransfer) {
     console.log("Transfer failed: insufficient funds");
 }
 
-
-
 // 4. Monthly maintenance , adding to savings and removing from checking accounts.
-if (account1.type == "Savings") {
-const interest = account1.balance * 0.02;
+console.log("--Monthly Maintenance--")
+
 const deductFee = 100;
+if (account1.type == "Savings") {
+let interest = account1.balance * 0.02;
+account1.balance += interest
 console.log('Interest Added')
-console.log(account1.balance += interest)
+console.log("Balance is: " + account1.balance)
 } else {
-    console.log("Fee Deducted")
-    console.log(account1.balance -= withdrawal)
+    account1.balance -= withdrawal
+    console.log("Fee Deducted");
+    console.log("New Balance is: " + account1.balance);
 }
 
 if (account2.type == "Savings") {
-const interest = account2.balance * 0.02;
-const deductFee = 100;
+let interest = account2.balance * 0.02;
+account2.balance += interest
 console.log('Interest Added')
-console.log(account2.balance += interest)
+console.log("Balance is: " + account2.balance)
 } else {
+    account2.balance -= withdrawal
     console.log("Fee Deducted")
-    console.log(account2.balance -= withdrawal)
+    console.log("New Balance is: " + account2.balance);
 }
 
 if (account3.type == "Savings") {
 const interest = account3.balance * 0.02;
-const deductFee = 100;
+account3.balance += interest
 console.log('Interest Added')
-console.log(account3.balance += interest)
+console.log("Balance is: " + account3.balance);
 } else {
-    console.log("Fee Deducted")
-    console.log(account3.balance -= withdrawal)
+    account3.balance -= withdrawal
+    console.log("Fee Deducted");
+    console.log("New Balance is: " + account3.balance)
 }
 
 if (account4.type == "Savings") {
 const interest = account4.balance * 0.02;
-const deductFee = 100;
+account4.balance += interest
 console.log('Interest Added')
-console.log(account4.balance += interest)
+console.log("Balance is: " + account3.balance)
 } else {
+    account4.balance -= withdrawal
     console.log("Fee Deducted")
-    console.log(account4.balance -= withdrawal)
+    console.log("New Balance is: " + account3.balance)
 }
+
+
 
 // 5. Comparisons: the highest balance, the lowest balance.
+console.log("--Comparisons--")
 
-let highest = account1;
-let lowest = account1;
+//Before conversion
+console.log("Before conversion  " + account1.balance, account1.currency);
+console.log("Before conversion  " + account2.currency, account2.balance)
+console.log("Before conversion  " + account3.currency, account3.balance)
+console.log("Before conversion  " + account4.currency, account4.balance)
 
-// comparing account2
-if (account2.balance > highest.balance) {
-    highest = account2;
-} else {
-    highest = highest;
+
+// Currency conversions
+let exchangeRateNaira = 1500;
+
+//Using Ternary Operators because thats all i could think of that actually worked for conversion
+let account1NGN = account1.currency === "NGN" ? account1.balance : account1.balance * exchangeRateNaira;
+let account2NGN = account2.currency === "NGN" ? account2.balance : account2.balance * exchangeRateNaira;
+let account3NGN = account3.currency === "NGN" ? account3.balance : account3.balance * exchangeRateNaira;
+let account4NGN = account4.currency === "NGN" ? account4.balance : account4.balance * exchangeRateNaira;
+
+console.log(account1NGN, account2NGN, account3NGN, account4NGN);
+
+
+let highest = { 
+    name: account1.name, 
+    naira: account1NGN, 
+    original: account1.balance, 
+    currency: account1.currency 
+};
+let lowest = { 
+    name: account1.name, 
+    naira: account1NGN, 
+    original: account1.balance, 
+    currency: account1.currency };
+
+// Compare account2
+if (account2NGN > highest.naira) {
+    highest = { 
+        name: account2.name, 
+        naira: account2NGN, 
+        original: account2.balance, 
+        currency: account2.currency };
+}
+if (account2NGN < lowest.naira) {
+    lowest = { 
+        name: account2.name, 
+        naira: account2NGN, 
+        original: account2.balance, 
+        currency: account2.currency };
 }
 
-if (account2.balance < lowest.balance) {
-    lowest = account2;
-} else {
-    lowest = lowest;
+// Compare account3
+if (account3NGN > highest.naira) {
+    highest = { 
+        name: account3.name, 
+        naira: account3NGN, 
+        original: account3.balance, 
+        currency: account3.currency };
+}
+if (account3NGN< lowest.naira) {
+    lowest = { 
+        name: account3.name, 
+        naira: account3NGN, 
+        original: account3.balance, 
+        currency: account3.currency };
 }
 
-// compare account3
-if (account3.balance > highest.balance) {
-    highest = account3;
-} else {
-    highest = highest;
+// Compare account4
+if (account4NGN > highest.naira) {
+    highest = { 
+        name: account4.name, 
+        naira: account4NGN, 
+        original: account4.balance, 
+        currency: account4.currency };
+}
+if (account4NGN < lowest.naira) {
+    lowest = { 
+        name: account4.name,
+       naira: account4NGN, 
+        original: account4.balance, 
+        currency: account4.currency };
 }
 
-if (account3.balance < lowest.balance) {
-    lowest = account3;
-} else {
-    lowest = lowest;
-}
+// Print results
+console.log("Highest balance: " + highest.name + " with " + highest.naira + " NGN");
+console.log("Lowest balance: " + lowest.name + " with " + lowest.naira + " NGN");
 
-// compare account4
-if (account4.balance > highest.balance) {
-    highest = account4;
-} else {
-    highest = highest;
-}
 
-if (account4.balance < lowest.balance) {
-    lowest = account4;
-} else {
-    lowest = lowest;
-}
 
-console.log("Highest balance: " + highest.name + " with " + highest.balance.toFixed(2) + " " + highest.currency);
-console.log("Lowest balance: " + lowest.name + " with " + lowest.balance.toFixed(2) + " " + lowest.currency);
 
-// 6. Status check (no loops, only if...else)
-console.log("Account Status--");
+
+// 6. Status check
+console.log("--Account Status--");
 
 // Account 1
 if (account1.balance > 0) {
@@ -235,9 +295,10 @@ if (account4.balance > 0) {
 }
 
 
-// 7. Final Summary (no loops)
-console.log(" Final Summary ---");
-console.log(account1.name + " | Balance: " + account1.balance.toFixed(2) + " " + account1.currency + " | Type: " + account1.type);
-console.log(account2.name + " | Balance: " + account2.balance.toFixed(2) + " " + account2.currency + " | Type: " + account2.type);
-console.log(account3.name + " | Balance: " + account3.balance.toFixed(2) + " " + account3.currency + " | Type: " + account3.type);
-console.log(account4.name + " | Balance: " + account4.balance.toFixed(2) + " " + account4.currency + " | Type: " + account4.type);
+// 7. Final Summary
+console.log("--Final Summary ---");
+
+console.log(account1.name + " | Balance: " + account1.balance + " " + account1.currency + " | Type: " + account1.type);
+console.log(account2.name + " | Balance: " + account2.balance + " " + account2.currency + " | Type: " + account2.type);
+console.log(account3.name + " | Balance: " + account3.balance + " " + account3.currency + " | Type: " + account3.type);
+console.log(account5.name + " | Balance: " + account5.balance + " " + account5.currency + " | Type: " + account5.type);
