@@ -36,6 +36,8 @@ const account5 = {
 };
 
 //1. Simulating deposits:
+console.log("--Adding Deposits--")
+
 const firstDeposit = 10000;
 const secondDeposit = 5000;
 
@@ -44,7 +46,6 @@ account2.balance += firstDeposit;
 account3.balance += secondDeposit;
 
 //Showing the new balances.
-console.log("--Adding Deposits--")
 console.log("New balance after adding a deposit to Account2 is: " + account2.balance);
 console.log("New balance after adding a deposit to Account3 is: " + account3.balance);
 
