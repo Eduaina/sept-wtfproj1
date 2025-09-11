@@ -126,7 +126,7 @@ account1.balance += interest
 console.log('Interest Added')
 console.log("Balance is: " + account1.balance)
 } else {
-    account1.balance -= withdrawal
+    account1.balance -= deductFee
     console.log("Fee Deducted");
     console.log("New Balance is: " + account1.balance);
 }
@@ -137,7 +137,7 @@ account2.balance += interest
 console.log('Interest Added')
 console.log("Balance is: " + account2.balance)
 } else {
-    account2.balance -= withdrawal
+    account2.balance -= deductFee
     console.log("Fee Deducted")
     console.log("New Balance is: " + account2.balance);
 }
@@ -148,7 +148,7 @@ account3.balance += interest
 console.log('Interest Added')
 console.log("Balance is: " + account3.balance);
 } else {
-    account3.balance -= withdrawal
+    account3.balance -= deductFee
     console.log("Fee Deducted");
     console.log("New Balance is: " + account3.balance)
 }
@@ -159,7 +159,7 @@ account4.balance += interest
 console.log('Interest Added')
 console.log("Balance is: " + account3.balance)
 } else {
-    account4.balance -= withdrawal
+    account4.balance -= deductFee
     console.log("Fee Deducted")
     console.log("New Balance is: " + account3.balance)
 }
