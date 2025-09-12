@@ -27,5 +27,6 @@ console.log(result);
 //Template LiterL
  console.log(`Hello ${name}, the result of num1 + num2 is ${result}`);
 
+ 
 // string concatenation
 console.log("Hello " + name + ", the result of num1 + num2 is " + result);
