@@ -1,4 +1,4 @@
-// CLASS WORK
+// 2nd CLASS WORK
  
 // 🎯 Game: Fruit Catcher
 // The player chooses a basket, and the game checks if the basket contains a fruit. 

@@ -61,9 +61,11 @@ console.log("The Final Result is: " + finalResult);
 
 
 
-if (user3.currency == user1.currency) {
-    console.log(user1.currency += deposit);
-    console.log(user3.currency -= deposit);
+/// Part of the 1st classwork of week 2
+
+if (user3.currency == user1.currency && user3.balance > deposit) {
+    console.log(user1.balance += deposit);
+    console.log(user3.balance -= deposit);
 } else {
     console.log("Transfer failed");
 }
