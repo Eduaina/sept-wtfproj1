@@ -1,7 +1,9 @@
 // CLASS WORK
  
 // 🎯 Game: Fruit Catcher
-// The player chooses a basket, and the game checks if the basket contains a fruit. Each basket is an object, and the game uses a function to check the basket. It uses an array to store baskets, and a boolean to track if the fruit was found.
+// The player chooses a basket, and the game checks if the basket contains a fruit. 
+// Each basket is an object, and the game uses a function to check the basket. 
+// It uses an array to store baskets, and a boolean to track if the fruit was found.
  
 const baskets = [
     { 
