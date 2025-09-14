@@ -22,26 +22,44 @@ const baskets = [
     }
 ];
  
- 
-function checkBasket(basketNumber) {
-    let instruction = prompt("You have 3 choices: Basket 1 or Basket 2 or Basket 3. " + " Choose your basket")
+ // Attempt 2
+// function checkBasket(basketNumber) {
+//     let instruction = prompt("You have 3 choices: Basket 1 or Basket 2 or Basket 3. " + " Choose your basket")
 
 
+//     if (baskets) {
+//         if (instruction == baskets[0].name && baskets[0].hasFruit == true) {
+//             return "Correct choice of Basket, Fruit Found";
+//         } else if (instruction == baskets[1].name && baskets[1].hasFruit == true) {
+//             return "Correct choice of Basket, Fruit Found";
+//         } else if (instruction == baskets[2].name && baskets[2].hasFruit == true) {
+//             return "Correct choice of Basket, Fruit Found";
+//         } else {
+//             return "Sorry your choosen basket is empty";
+//         } 
+//     } else if (!baskets) {
+//         return "Not a basket choice!!. Try Again!!";
+//     }
+
+//     return;
+// }
+
+
+// Attempt 3
+
+function checkBasket(basketNumber)  {
     if (baskets) {
-        if (instruction == baskets[0].name && baskets[0].hasFruit == true) {
-            return "Correct choice of Basket, Fruit Found";
-        } else if (instruction == baskets[1].name && baskets[1].hasFruit == true) {
-            return "Correct choice of Basket, Fruit Found";
-        } else if (instruction == baskets[2].name && baskets[2].hasFruit == true) {
+        if (basketNumber) {
             return "Correct choice of Basket, Fruit Found";
         } else {
-            return "Sorry your choosen basket is empty";
-        } 
-    } else if (!baskets) {
-        return "Not a basket choice!!. Try Again!!";
+             return "Sorry your choosen basket is empty";
+        }
+    } else if (!baskets[basketNumber]) {
+        return "Wrong choice of basket!!!. Try Again!!!"
     }
-
-    return;
 }
 
-console.log(checkBasket());
+console.log(checkBasket(baskets[0].hasFruit));
+console.log(checkBasket(baskets[1].hasFruit));
+console.log(checkBasket(baskets[1].hasFruit));
+console.log(checkBasket(wooda));
