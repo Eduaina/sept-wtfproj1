@@ -46,20 +46,39 @@ const baskets = [
 
 
 // Attempt 3
+// function checkBasket(basketNumber)  {
+//     if (baskets) {
+//         if (basketNumber) {
+//             return "Correct choice of Basket, Fruit Found";
+//         } else {
+//              return "Sorry your choosen basket is empty";
+//         }
+//     } else if (!baskets[basketNumber]) {
+//         return "Wrong choice of basket!!!. Try Again!!!"
+//     }
+// }
 
-function checkBasket(basketNumber)  {
-    if (baskets) {
-        if (basketNumber) {
-            return "Correct choice of Basket, Fruit Found";
-        } else {
-             return "Sorry your choosen basket is empty";
-        }
-    } else if (!baskets[basketNumber]) {
-        return "Wrong choice of basket!!!. Try Again!!!"
-    }
+
+// Attempt 4
+function checkBasket(basketName) {
+
+  // Finding the basket object that matches the user's choice using .find.
+  // .find() is an array method and the parameter is an arrow function
+  let selectedBasket = baskets.find(basket => basket.name === basketName);
+
+  if (!selectedBasket) {
+    return "Wrong choice of basket! Try Basket 1, Basket 2, or Basket 3.";
+  }
+
+  if (selectedBasket.hasFruit) {
+    return "HURRAY!!! Correct choice of Basket, Fruit Found!";
+  } else {
+    return "Sorry, your chosen basket is empty, YOU LOSE!!!";
+  }
 }
 
-console.log(checkBasket(baskets[0].hasFruit));
-console.log(checkBasket(baskets[1].hasFruit));
-console.log(checkBasket(baskets[1].hasFruit));
-console.log(checkBasket(wooda));
+
+console.log(checkBasket("Basket 1"));
+console.log(checkBasket("Basket 2"));
+console.log(checkBasket("Basket 3"));
+console.log(checkBasket("wooda"));
