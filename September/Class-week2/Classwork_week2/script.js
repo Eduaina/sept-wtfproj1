@@ -24,28 +24,24 @@ const baskets = [
  
  
 function checkBasket(basketNumber) {
-    const instructions = prompt("You have 3 choices: Basket 1 or Basket 2 or Basket 3. " + " Choose your basket")
+    let instruction = prompt("You have 3 choices: Basket 1 or Basket 2 or Basket 3. " + " Choose your basket")
+
 
     if (baskets) {
-        if (instructions == baskets[0].name && baskets[0].hasFruit == true) {
-            console.log("Correct choice of Basket");
+        if (instruction == baskets[0].name && baskets[0].hasFruit == true) {
+            return "Correct choice of Basket, Fruit Found";
+        } else if (instruction == baskets[1].name && baskets[1].hasFruit == true) {
+            return "Correct choice of Basket, Fruit Found";
+        } else if (instruction == baskets[2].name && baskets[2].hasFruit == true) {
+            return "Correct choice of Basket, Fruit Found";
         } else {
-            console.log("Sorry your choosen basket is empty")
-        }
+            return "Sorry your choosen basket is empty";
+        } 
+    } else if (!baskets) {
+        return "Not a basket choice!!. Try Again!!";
+    }
 
-        if (instructions == baskets[1].name && baskets[1].hasFruit == true) {
-            console.log("Correct choice of Basket");
-        } else {
-            console.log("Sorry your choosen basket is empty")
-        }
-
-        if (instructions == baskets[2].name && baskets[2].hasFruit == true) {
-            console.log("Correct choice of Basket");
-        } else {
-            console.log("Sorry your choosen basket is empty")
-        }
-
-    } 
+    return;
 }
 
-checkBasket();
+console.log(checkBasket());
