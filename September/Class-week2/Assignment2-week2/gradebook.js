@@ -1,6 +1,6 @@
 const students = [
     {
-        firstName: "Isreal", 
+        firstName: "Israel", 
         lastName: "Foily", 
         score: 80
     },
@@ -12,15 +12,12 @@ const students = [
     },
 
     {
-
         firstName: "Alicia", 
         lastName: "Mercy", 
         score: 65
     },
 
     {
-
-
         firstName: "Eliana", 
         lastName: "Helen", 
         score: 40
