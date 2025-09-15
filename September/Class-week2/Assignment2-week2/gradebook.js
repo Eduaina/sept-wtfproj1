@@ -138,7 +138,7 @@ function getGrade(score) {
     return "B";
   } else if (score >= 50) {
     return "C";
-  } else if (score >= 40) {
+  } else if (score >= 45) {
     return "D";
   } else {
     return "F";
@@ -162,7 +162,7 @@ function showResult(firstName, lastName) {
       console.log("Hello " + student.firstName + " " + student.lastName + ", your score is " + student.score);
       console.log("You got a " + grade + " grade.");
 
-      if (student.score >= 50) {
+      if (student.score >= 45) {
         console.log("Congratulations, you passed!");
       } else {
         console.log("You failed. You are to repeat this class.");
