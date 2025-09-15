@@ -60,25 +60,61 @@ const baskets = [
 
 
 // Attempt 4
+// function checkBasket(basketName) {
+
+//   // Finding the basket object that matches the user's choice using .find.
+//   // .find() is an array method and the parameter is an arrow function
+//   let selectedBasket = baskets.find(basket => basket.name === basketName);
+
+//   if (!selectedBasket) {
+//     return "Wrong choice of basket! Try Basket 1, Basket 2, or Basket 3.";
+//   }
+
+//   if (selectedBasket.hasFruit) {
+//     return "HURRAY!!! Correct choice of Basket, Fruit Found!";
+//   } else {
+//     return "Sorry, your chosen basket is empty, YOU LOSE!!!";
+//   }
+// }
+
+
+// console.log(checkBasket("Basket 1"));
+// console.log(checkBasket("Basket 2"));
+// console.log(checkBasket("Basket 3"));
+// console.log(checkBasket("wooda"));
+
+
+
+// Attempt 5 -- Ive given up and im using a for loop now
+
 function checkBasket(basketName) {
+  let found = false;
 
-  // Finding the basket object that matches the user's choice using .find.
-  // .find() is an array method and the parameter is an arrow function
-  let selectedBasket = baskets.find(basket => basket.name === basketName);
+  for (let i = 0; i < baskets.length; i++) {
+    let basket = baskets[i];
 
-  if (!selectedBasket) {
-    return "Wrong choice of basket! Try Basket 1, Basket 2, or Basket 3.";
+    if (basket.name.toLowerCase() == basketName.toLowerCase()) {
+      let fruit = basket.hasFruit
+
+      if (fruit) {
+        console.log("You picked: " + basket.name + ". HURRAY!!! Correct choice of Basket, Fruit Found!");
+      } else {
+        console.log("Sorry, your chosen basket is empty, YOU LOSE!!!");
+      }  
+
+      found = true;
+      break;
+
+    }  
+  
   }
 
-  if (selectedBasket.hasFruit) {
-    return "HURRAY!!! Correct choice of Basket, Fruit Found!";
-  } else {
-    return "Sorry, your chosen basket is empty, YOU LOSE!!!";
-  }
+  if (!found) {
+        console.log("Wrong choice of basket! Try Basket 1, Basket 2, or Basket 3.");
+      }
+
 }
 
+name = prompt("You have 3 choices: Basket 1 or Basket 2 or Basket 3. " + " Choose your basket");
 
-console.log(checkBasket("Basket 1"));
-console.log(checkBasket("Basket 2"));
-console.log(checkBasket("Basket 3"));
-console.log(checkBasket("wooda"));
+console.log(checkBasket(name));
