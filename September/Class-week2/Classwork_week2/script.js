@@ -104,7 +104,6 @@ function checkBasket(basketName) {
 
       found = true;
       break;
-
     }  
   
   }
