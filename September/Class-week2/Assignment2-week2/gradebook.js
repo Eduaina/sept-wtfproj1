@@ -184,6 +184,7 @@ let last = prompt("Enter your last name:");
 
 // Showing the result per student
 showResult(first, last);
+
 console.log(" ");
 console.log(" ");
 console.log(" ");
