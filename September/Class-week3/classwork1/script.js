@@ -55,6 +55,7 @@ const bankAccount = [];
 const addBankAccount = (name, balance) => {
   const account = { name: name, balance: balance }; // local variable (local scope)
   bankAccount.push(account); // global variable // global scope
+  return account, bankAccount;
 };
 
 function bankTransfer(sender, receiver, amount) {
@@ -73,7 +74,7 @@ function bankTransfer(sender, receiver, amount) {
   console.log("Sender Account", senderAccount)
   console.log("Receiver Account", receiverAccount)
 }
-
+console.log(bankAccount, "test");
 console.log(bankAccount.length, "before adding");
 addBankAccount("Mike", 202);
 addBankAccount("Luke", 202);
@@ -85,3 +86,8 @@ bankTransfer("Mike", "Lukes", 100);
 
 // Q1. Implement a simple add to cart feature.
 // Q2. Implement a simple todo items list
+
+
+let tryNull;
+
+console.log(tryNull);
