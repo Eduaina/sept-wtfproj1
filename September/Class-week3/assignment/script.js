@@ -46,13 +46,12 @@ console.log(" ");
 
 
 
-
-console.log("Removing products from the cart");
+console.log("-------------- Removing products from the cart -----------");
 console.log(" ");
 
 // 2.
 
-const removeProduct = ( productName) => {
+const removeProduct = (productName) => {
   const removed = inventory.filter(product => product.name === productName);
   if (removed.length === 0) {
     console.log("Product not found in Inventory!!! Try a correct Product name!!!")
@@ -64,6 +63,8 @@ const removeProduct = ( productName) => {
   // console.log("New list:", newInventory);
   return newInventory;
 };
+
+
 
 
 
@@ -113,13 +114,24 @@ console.log(" ");
 
 
 // 4.
-console.log("Generating Report");
+console.log("---- Generating Inventory Report ---:");
 console.log(" ");
 
 
 const generateReport = () => {
   let totalValue = 0;
   let lowStock = [];
+
+  function stockStatus(item) {
+    if (item.quantity === 0) {
+    return "OUT OF STOCK!!!! Restock Immediately";
+  } else if(item.quantity <= 20) {
+    return "Dangerously low!!! Needs urgent restock";
+  } else if (item.quantity <= product.quantity / 2) {
+    return "Halfway gone!! Monitor and plan restock";
+  } 
+  return "Stock is currently enough";
+  }
 
   for (let i = 0; i < inventory.length; i++) {
     let product = inventory[i];
@@ -130,7 +142,7 @@ const generateReport = () => {
     }
   }
 
-  console.log("📊 Inventory Report:");
+
   console.log(`- Total Products: ${inventory.length}`);
   console.log(`- Total Inventory Value: $${totalValue}`);
   console.log(`- Low Stock Items (<10): ${lowStock.length > 0 ? lowStock.join(", ") : "None"}`);
