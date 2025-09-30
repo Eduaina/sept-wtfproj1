@@ -136,6 +136,10 @@ input[type="email"] {
     color: #FEFEFE;
     font-family: 'Segoe UI';
 }
+.password {
+    width: 100%;
+    position: relative;
+}
 
 input[type="password"] {
     width: 90%;
@@ -145,6 +149,15 @@ input[type="password"] {
     background-color: rgba(107, 91, 91, 0.059);
     border: 1px solid rgba(255, 255, 255, 0.463);
     color: #FEFEFE;
+}
+
+#password-img {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+
 }
 
 input[type="checkbox"] {
