@@ -6,6 +6,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* CSS reset rules */
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 html, body {
 	height: 100%;
@@ -55,7 +60,7 @@ table {
 
 /* Fonts and colors */
 
-body {
+/* body {
 	font-family: 'Josefin Sans', serif;
 }
 h1, h2, h3, h4, h5, h6, header {
@@ -78,12 +83,12 @@ footer a {
 	color: rgba(0, 0, 0, 0.8);
 }
 a:hover {
-	color: #78da81;
-}
+	color: #00f815;
+} */
 
 
 /* Positioning and margins */
-
+/* 
 @media (min-width: 1100px) {
 	body {
 		width: 1100px;
@@ -103,11 +108,11 @@ aside {
 header .right {
 	float: right;
 	margin: 0 10px 15px;
-}
+} */
 
 
 /* Header */
-header {
+/* header {
 	padding: 20px 0;
 	height: 80px;
 }
@@ -131,28 +136,28 @@ header li.logo {
 }
 header a {
 	text-decoration: none;
-}
+} */
 
 
 /* Aside */
 
-aside p {
+/* aside p {
 	border-radius: 10px;
 	padding: 20px 20px;
-}
+} */
 
 
 /* Footer */
 
-footer {
+/* footer {
 	padding: 5px 15px;
 	height: 80px;
-}
+} */
 
 
 /* Text styles and margins */
 
-p {
+/* p {
 	margin-bottom: 15px;
 }
 h1 {
@@ -192,4 +197,4 @@ h6 {
   header .right {
   	float: none;
   }
-}
+} */
