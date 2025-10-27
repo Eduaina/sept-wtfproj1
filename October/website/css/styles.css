@@ -1,9 +1,11 @@
 :root {
     font-size: 18px;
     --text-color: #565454;
+    --h1-color: #212427;
     font-family: Montserrat;
     text-transform: capitalize;
     max-width: 1400px;
+    --button-color: #ff9090;
 }
 
 #main {
@@ -15,6 +17,7 @@
     background-repeat: no-repeat; 
     width: 80%;
     margin: auto;
+    position: relative;
 }
 
 .sect {
@@ -24,30 +27,118 @@
 } 
 
 .one {
-    background: red;
+    position: relative;
+    top: 79px;
+    left: 68px;
+    height: 430px;
 }
+
+/* .one:hover {
+    border: 1px solid #000000a5;
+} */
+
 h1 {     
     font-weight: 700;
     font-style: Bold;
     font-size: 2rem;
     line-height: 100%;
     letter-spacing: 0%;
+    color: var(--h1-color);
+    width: 150px;
 }
 
-#form {}
+#form {
+    margin-top: 20px;
+    font-size: 1rem;
+}
 
-input[type="email"] {}
+input[type="email"], input[type="password"] {
+    margin-top: 21px;
+    width: 450px;
+    padding: 18px 18px 18px 60px;
+}
 
-input[type="password"]
+.wrap {
+    position: relative;
+}
 
-input[type="checkbox"]
+.input-icon {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+}
 
-input[type="submit"]
+.open {
+    position: absolute;
+    top: 30px;
+    right: 115px;
+    width: 30px;
+    height: 30px;
+}
 
-#p-line
+#closedImg, #openImg {
+    border: none;
+    background: transparent;
+} 
 
-.icon
+#check {
+    margin-top: 21px;
+    margin-right: 20px;
+}
+
+input[type="submit"] {
+    margin-top: 31px;
+    width: 150;
+    padding: 18px;
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#p-line {
+    margin-top: 40px;
+    display: inline-flex;
+    align-items: center;
+}
+
+#p-line span {
+    margin-left: 25px;
+}
+
+span > a > img {
+    margin-left: 15px;
+}
+
+.img {
+    box-shadow: 0 0 0 5px blue
+}
+
+.last {
+    margin-top: 15px;
+}
+
+#blue {
+    color: #008BD9;
+;
+}
+
+
 
 .two {
-    object-fit: contain;
+    object-fit: cover;
+    height: 530px;
+    position: relative;
+    top: 60px;
+    right: 0;
 }
+
+/* .two:hover {
+    border: 1px solid blueviolet;
+} */
+
+.two img {
+    width: 100%;
+    height: 100%;
+}
+    
