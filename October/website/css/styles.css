@@ -55,7 +55,7 @@ h1 {
     font-size: 1rem;
 }
 
-#email, #passwordInput {
+#emailInput, #passwordInput {
     margin-top: 1.17rem;
     width: 25rem;
     padding: 1rem 1rem 1rem 3.33rem;
