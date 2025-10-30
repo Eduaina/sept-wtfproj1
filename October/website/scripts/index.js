@@ -41,7 +41,9 @@ const formCallback = async (e) => {
     myFetchPromise.then((response) => {
       return response.json()
     }).then((data) => {
-      console.log(data)
+      console.log('Data Saved',data)
+    }).catch(err => {
+      console.log(err, "error")
     })
 
     console.log("send to the backend");
@@ -51,15 +53,27 @@ const formCallback = async (e) => {
 
 form.addEventListener("submit", formCallback);
 
+const testPromise = new Promise((resolve, reject) => {
+
+});
+
+
+console.log('testing out pending state',testPromise)
+
+
+const mytestPromise = new Promise((resolve, reject) => {
+  resolve(1000);
+});
+
+console.log("testing out fufilled state", mytestPromise);
 
 
 
+const tPromise = new Promise((resolve, reject) => {
+  reject(45);
+});
 
-
-
-
-
-
+console.log("testing out reject state", tPromise);
 
 
 

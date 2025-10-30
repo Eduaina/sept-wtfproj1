@@ -107,6 +107,7 @@ input[type="submit"] {
 
 #p-line span {
     margin-left: 1.39rem;
+    display: flex;
 }
 
 span > a > img {
