@@ -5,8 +5,6 @@ const passwordInput = document.getElementById("passwordInput");
 const closedImg = document.getElementById("closedImg");
 const closedImgIcon = document.getElementById("closedImgIcon");
 const form = document.querySelector("#form");
-const displayDiv = document.getElementById("display");
-const submit = document.getElementById("submit");
 
 
 
