@@ -1,0 +1,16 @@
+button {
+    color: blueviolet;
+    padding: 2rem;
+    margin: 3rem;
+    background-color: aquamarine;
+}
+
+button:hover {
+    color: black;
+    background-color: aliceblue;
+}
+
+button:active {
+    color: greenyellow;
+    background-color: rgb(149, 197, 239);
+}

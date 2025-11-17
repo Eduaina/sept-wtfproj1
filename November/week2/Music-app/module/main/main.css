@@ -1,0 +1,12 @@
+main{
+    font-size: 30px;
+    color: blue;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.section2 {
+    border-radius: 5px solid purple;
+}
