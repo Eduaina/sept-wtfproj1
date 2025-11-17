@@ -9,6 +9,7 @@ const renderComponent = (elements) => {
     // get the specific attributes that we stored the path to the component/module in
     const importElement = element.getAttribute("data-import");
 
+    
     fetch(importElement)
       .then((res) => {
         if (!res.ok) {
